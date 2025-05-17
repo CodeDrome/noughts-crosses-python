@@ -24,6 +24,7 @@ class NaCConsole(object):
 
         self.__event_loop()
 
+
     def __event_loop(self):
 
         while True:
@@ -50,6 +51,7 @@ class NaCConsole(object):
                 self.game.new_game()
                 self.__draw_board()
                 self.__show_level()
+
 
     def __draw_board(self):
 
@@ -99,6 +101,7 @@ class NaCConsole(object):
 
         self.screen.refresh()
 
+
     def __show_level(self):
 
         width = 56
@@ -108,7 +111,8 @@ class NaCConsole(object):
         self.screen.addstr(29, 0, level_string, curses.color_pair(2) | curses.A_BOLD)
         self.screen.refresh()
 
-    def on_game_changed(self, column, row, shape):
+
+    def on_game_changed(self, column:int, row:int, shape:str):
 
         x = 2 + (19 * column)
         y = 1 + (10 * row)
@@ -132,7 +136,8 @@ class NaCConsole(object):
 
         self.screen.refresh()
 
-    def on_game_over(self, winner):
+
+    def on_game_over(self, winner:str):
 
             width = 56
             message_width = 18
