@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Callable
 
 import random
 from enum import Enum
@@ -12,7 +12,7 @@ class NaC(object):
         AVERAGE = 1
         GENIUS = 2
 
-    def __init__(self, on_change, on_game_over):
+    def __init__(self, on_change:Callable, on_game_over:Callable):
 
         self.level = self.Levels.AVERAGE
         self._on_change = on_change
